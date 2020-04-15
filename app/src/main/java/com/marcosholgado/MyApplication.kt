@@ -7,25 +7,25 @@ import com.marcosholgado.daggerplayground.di.CoreComponent
 import com.marcosholgado.daggerplayground.di.DaggerAppComponent
 import com.marcosholgado.daggerplayground.di.DaggerCoreComponent
 import dagger.android.AndroidInjector
+import dagger.android.DaggerApplication
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import javax.inject.Inject
 
-class MyApplication : Application(), CoreComponentProvider, HasActivityInjector {
+class MyApplication : DaggerApplication(), CoreComponentProvider {
 
     @Inject
     lateinit var activityInjector: DispatchingAndroidInjector<Activity>
 
     private lateinit var coreComponent: CoreComponent
 
-    override fun onCreate() {
-        super.onCreate()
-
-        DaggerAppComponent
+    override fun applicationInjector():
+            AndroidInjector<out DaggerApplication> {
+        return DaggerAppComponent
             .builder()
+            .application(this)
             .coreComponent(provideCoreComponent())
             .build()
-            .inject(this)
     }
 
     override fun provideCoreComponent(): CoreComponent {
@@ -37,6 +37,5 @@ class MyApplication : Application(), CoreComponentProvider, HasActivityInjector 
         return coreComponent
     }
 
-    override fun activityInjector() =  activityInjector
 
 }

@@ -1,3 +1,3 @@
 package com.marcosholgado.core
 
-class ExpensiveObject
+class ExpensiveObject()

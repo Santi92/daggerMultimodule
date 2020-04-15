@@ -6,9 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.marcosholgado.core.ExpensiveObject
 import com.marcosholgado.core.di.CoreInjectHelper
 import dagger.android.AndroidInjection
+import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
-class OtherActivity : AppCompatActivity() {
+class OtherActivity : DaggerAppCompatActivity() {
 
     @Inject
     lateinit var expensiveObject: ExpensiveObject
@@ -19,7 +20,6 @@ class OtherActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_other)
-        AndroidInjection.inject(this)
 
 
         val textView = findViewById<TextView>(R.id.textView)

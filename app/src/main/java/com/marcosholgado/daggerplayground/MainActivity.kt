@@ -7,10 +7,12 @@ import com.marcosholgado.OtherObject
 import com.marcosholgado.core.ExpensiveObject
 import com.marcosholgado.mymodule.OtherActivity
 import dagger.android.AndroidInjection
+import dagger.android.DaggerActivity
+import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : DaggerAppCompatActivity() {
 
     @Inject
     lateinit var expensiveObject: ExpensiveObject
