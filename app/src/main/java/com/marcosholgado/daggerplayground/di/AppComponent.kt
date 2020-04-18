@@ -2,17 +2,20 @@ package com.marcosholgado.daggerplayground.di
 
 import android.app.Application
 import com.marcosholgado.MyApplication
+import com.marcosholgado.core.di.AppScope
+import com.sundevs.basecinemark.ActivityBindingModule
+
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
 
+
 @Component(modules = [
     AndroidInjectionModule::class,
-    AppModule::class,
-    ActivityBindingModule::class
-    ],
-    dependencies = [CoreComponent::class]
+    ActivityBindingModule::class,
+    CoreModule::class
+    ]
 )
 @AppScope
 interface AppComponent : AndroidInjector<MyApplication> {
@@ -23,8 +26,6 @@ interface AppComponent : AndroidInjector<MyApplication> {
         fun application(application: Application):
                 AppComponent.Builder
 
-        fun coreComponent(coreComponent: CoreComponent):
-                AppComponent.Builder
 
         fun build(): AppComponent
     }

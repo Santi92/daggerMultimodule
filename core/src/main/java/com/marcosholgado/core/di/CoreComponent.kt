@@ -1,11 +1,22 @@
 package com.marcosholgado.daggerplayground.di
 
+import android.app.Application
 import com.marcosholgado.core.ExpensiveObject
-import dagger.Component
-import javax.inject.Singleton
 
-@Component(modules = [CoreModule::class])
-@Singleton
+
+//@Singleton
+//@Component(modules = [CoreModule::class])
 interface CoreComponent {
+
+   // @Component.Builder
+    interface Builder {
+
+        //@BindsInstance
+        fun application(application: Application): Builder
+
+        fun build(): CoreComponent
+    }
+
     fun getExpensiveObject(): ExpensiveObject
+
 }
