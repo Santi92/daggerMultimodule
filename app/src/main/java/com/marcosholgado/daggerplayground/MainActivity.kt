@@ -1,11 +1,9 @@
 package com.marcosholgado.daggerplayground
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.marcosholgado.mymodule.OtherActivity
+import com.sundevs.basecinemark.Navigation
 import kotlinx.android.synthetic.main.activity_main.*
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
 
         button.setOnClickListener {
-            startActivity(Intent(this, OtherActivity::class.java))
+            Navigation.navigationModuleOne(this)
         }
     }
 }

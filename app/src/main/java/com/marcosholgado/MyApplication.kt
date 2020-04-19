@@ -3,7 +3,7 @@ package com.marcosholgado
 import android.app.Activity
 import com.marcosholgado.core.di.CoreComponentProvider
 import com.marcosholgado.daggerplayground.di.CoreComponent
-import com.marcosholgado.daggerplayground.di.DaggerAppComponent
+import com.sundevs.basecinemark.di.DaggerAppComponent
 
 
 import dagger.android.AndroidInjector

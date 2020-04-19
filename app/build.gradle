@@ -26,7 +26,6 @@ android {
 dependencies {
     implementation project(path: ':core')
     implementation project(path: ':basecinemark')
-    implementation project(path: ':mymodule')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
