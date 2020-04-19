@@ -11,12 +11,10 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 @LargeTest
 class FirstTest {
-    @get:Rule
-    val activityRule = MyActivityTestRule(MainActivity::class.java)
+
 
     @Test
     fun startUpTest() {
-        assertWithMessage("Start up time was ${activityRule.timestamp}").that(activityRule.timestamp)
-            .isLessThan(100)
+
     }
 }

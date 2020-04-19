@@ -1,2 +1,4 @@
 include ':app', ':mymodule', ':core'
 include ':basecinemark'
+include ':cmkecuador'
+include ':sumfeature'

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Dagger Playground</string>
+    <string name="title_sumfeature">Sum</string>
 </resources>

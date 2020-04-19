@@ -1,2 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.marcosholgado.mymodule" />
+    package="com.marcosholgado.mymodule" >
+
+
+    <application>
+
+        <activity
+            android:name=".OtherActivity">
+        </activity>
+
+    </application>
+
+</manifest>
