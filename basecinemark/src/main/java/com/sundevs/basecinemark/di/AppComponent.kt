@@ -2,6 +2,7 @@ package com.sundevs.basecinemark.di
 
 import android.app.Application
 import com.marcosholgado.core.di.AppScope
+import com.marcosholgado.core.resource.CmkCoreSettings
 import com.marcosholgado.daggerplayground.di.CoreModule
 import com.sundevs.basecinemark.ActivityBindingModule
 
@@ -27,6 +28,9 @@ interface AppComponent : AndroidInjector<DaggerApplication> {
         fun application(application: Application):
                 AppComponent.Builder
 
+        @BindsInstance
+        fun cmkCoreSettings(cmkCoreSettings: CmkCoreSettings):
+                AppComponent.Builder
 
         fun build(): AppComponent
     }

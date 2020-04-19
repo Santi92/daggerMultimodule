@@ -7,6 +7,7 @@ import com.example.calculator.usecase.SumUseCase
 import com.marcosholgado.core.ExpensiveObject
 import com.marcosholgado.core.di.AppScope
 import com.marcosholgado.core.di.FeatureScope
+import com.marcosholgado.core.resource.CmkCoreSettings
 import com.sundevs.basecinemark.resource.StringsProvider
 import dagger.Binds
 

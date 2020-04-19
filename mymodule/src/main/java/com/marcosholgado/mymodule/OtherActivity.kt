@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.calculator.usecase.SumUseCase
 import com.marcosholgado.core.ExpensiveObject
+import com.marcosholgado.core.resource.CmkCoreSettings
 import com.sundevs.basecinemark.resource.StringsProvider
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
@@ -19,6 +20,9 @@ class OtherActivity : DaggerAppCompatActivity() {
 
     @Inject
     lateinit var sumUseCase: SumUseCase
+
+    @Inject
+    lateinit var cmkCoreSettings: CmkCoreSettings
 
 
     lateinit var firstNumberEditText: EditText
@@ -32,7 +36,7 @@ class OtherActivity : DaggerAppCompatActivity() {
 
 
         val textView = findViewById<TextView>(R.id.textView)
-       // textView.text = text
+        textView.text = cmkCoreSettings.getOptionalClientId()
         bindViews()
         bindListeners()
 

@@ -2,6 +2,7 @@ package com.marcosholgado
 
 import android.app.Activity
 import com.marcosholgado.core.di.CoreComponentProvider
+import com.marcosholgado.core.resource.CmkCoreSettings
 import com.marcosholgado.daggerplayground.di.CoreComponent
 import com.sundevs.basecinemark.di.DaggerAppComponent
 
@@ -23,9 +24,17 @@ class MyApplication : DaggerApplication(), CoreComponentProvider {
         return DaggerAppComponent
             .builder()
             .application(this)
-
+            .cmkCoreSettings(buildSetting())
             .build()
     }
+
+    private fun buildSetting() = CmkCoreSettings.Builder()
+        .addSalesChannel("ANDDROID")
+        .addOptionalClientId("Colombia app")
+        .connectApiToken("U3VuRGV2cyBXRUI")
+        .logActive(true)
+        .build();
+
 
     override fun provideCoreComponent(): CoreComponent {
         if (!this::coreComponent.isInitialized) {
