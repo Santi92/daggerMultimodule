@@ -1,16 +1,20 @@
 package com.marcosholgado
 
+
 import android.app.Activity
+import android.content.Context
+import android.content.res.Configuration
 import com.marcosholgado.core.di.CoreComponentProvider
 import com.marcosholgado.core.resource.CmkCoreSettings
+import com.marcosholgado.core.resource.LocaleCmk
 import com.marcosholgado.daggerplayground.di.CoreComponent
 import com.sundevs.basecinemark.di.DaggerAppComponent
-
-
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 import dagger.android.DispatchingAndroidInjector
+import java.util.*
 import javax.inject.Inject
+
 
 class MyApplication : DaggerApplication(), CoreComponentProvider {
 
@@ -18,6 +22,13 @@ class MyApplication : DaggerApplication(), CoreComponentProvider {
     lateinit var activityInjector: DispatchingAndroidInjector<Activity>
 
     private lateinit var coreComponent: CoreComponent
+
+
+    override fun onCreate() {
+        super.onCreate()
+        //setLocale(Locale("es-rCO"))
+    }
+
 
     override fun applicationInjector():
             AndroidInjector<out DaggerApplication> {
@@ -33,6 +44,7 @@ class MyApplication : DaggerApplication(), CoreComponentProvider {
         .addOptionalClientId("Colombia app")
         .connectApiToken("U3VuRGV2cyBXRUI")
         .logActive(true)
+        .addLocaleCmk(LocaleCmk("es", "CO"))
         .build();
 
 
@@ -44,4 +56,8 @@ class MyApplication : DaggerApplication(), CoreComponentProvider {
     }
 
 
+    private fun setLocale(locale: Locale) {
+
+        LocaleHelper.setLocale(this, "fr-rFR");
+    }
 }

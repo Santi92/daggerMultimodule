@@ -2,10 +2,12 @@
     package="com.marcosholgado.mymodule" >
 
 
-    <application>
+    <application
+        >
 
         <activity
-            android:name=".OtherActivity">
+            android:name=".OtherActivity"
+        >
         </activity>
 
     </application>

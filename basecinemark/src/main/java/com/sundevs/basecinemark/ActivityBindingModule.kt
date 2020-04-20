@@ -14,4 +14,7 @@ abstract class ActivityBindingModule {
 
     @ContributesAndroidInjector(modules = [Feature1Module::class])
     abstract fun otherActivity(): OtherActivity
+
+    @ContributesAndroidInjector()
+    abstract fun splashActivity(): SplashActivity
 }

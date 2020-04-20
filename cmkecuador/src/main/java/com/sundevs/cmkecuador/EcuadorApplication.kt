@@ -3,6 +3,7 @@ package com.sundevs.cmkecuador
 import android.app.Activity
 import com.marcosholgado.core.di.CoreComponentProvider
 import com.marcosholgado.core.resource.CmkCoreSettings
+import com.marcosholgado.core.resource.LocaleCmk
 import com.marcosholgado.daggerplayground.di.CoreComponent
 import com.sundevs.basecinemark.di.DaggerAppComponent
 import dagger.android.AndroidInjector
@@ -30,6 +31,7 @@ class EcuadorApplication : DaggerApplication(), CoreComponentProvider {
         .addSalesChannel("ANDDROID_EC")
         .addOptionalClientId("Ecuador app")
         .connectApiToken("2sdjadkjab")
+        .addLocaleCmk(LocaleCmk("es","EC"))
         .logActive(true)
         .build();
 

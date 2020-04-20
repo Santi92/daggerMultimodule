@@ -1,10 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MyModule</string>
-
-    <string name="insert_first_number_hint">Put a number here</string>
-    <string name="calculate">Calculate sum!</string>
-    <string name="result">Result</string>
+    <string name="insert_first_number_hint">Pon algo</string>
+    <string name="calculate">Calcular Butaca!</string>
+    <string name="result">Resultado </string>
     <string name="both_numbers_must_be_positive">Both numbers must be greater than 0!!</string>
     <string name="both_numbers_must_have_value">Insert a value for both numbers!</string>
+
 
 </resources>

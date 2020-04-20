@@ -6,7 +6,8 @@ class CmkCoreSettings private constructor(
     private val optionalClientClass: String?,
     private val optionalClientId: String = "",
     private val connectApiToken: String,
-    private val logActive: Boolean
+    private val logActive: Boolean,
+    private val localeCmk: LocaleCmk
 ) {
 
     fun getSalesChannel() = salesChannel
@@ -19,6 +20,8 @@ class CmkCoreSettings private constructor(
 
     fun getLogActive() = logActive
 
+    fun getLocaleCmk() = localeCmk
+
 
     class Builder {
 
@@ -27,7 +30,7 @@ class CmkCoreSettings private constructor(
         private var optionalClientId: String? = null
         private var connectApiToken: String? = null
         private var logActive: Boolean = false
-
+        private var localeCmk: LocaleCmk? = null
 
         fun addSalesChannel(salesChannel: String) =
             apply { this.salesChannel = salesChannel }
@@ -45,6 +48,9 @@ class CmkCoreSettings private constructor(
         fun logActive(logActive: Boolean) =
             apply { this.logActive = logActive }
 
+        fun addLocaleCmk(localeCmkApp: LocaleCmk) =
+            apply { this.localeCmk = localeCmkApp }
+
 
 
         fun build() = CmkCoreSettings(
@@ -52,7 +58,10 @@ class CmkCoreSettings private constructor(
             optionalClientClass,
             optionalClientId ?: error("optionalClientId is required"),
             connectApiToken ?: error("connectApiToken is required"),
-            logActive
+            logActive,
+            localeCmk ?: error("locale is required")
         )
     }
 }
+
+data class LocaleCmk(val language:String, val country: String)

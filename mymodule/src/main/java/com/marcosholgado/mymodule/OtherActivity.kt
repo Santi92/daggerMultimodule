@@ -1,5 +1,6 @@
 package com.marcosholgado.mymodule
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
@@ -11,6 +12,7 @@ import com.marcosholgado.core.ExpensiveObject
 import com.marcosholgado.core.resource.CmkCoreSettings
 import com.sundevs.basecinemark.resource.StringsProvider
 import dagger.android.support.DaggerAppCompatActivity
+import java.util.*
 import javax.inject.Inject
 
 class OtherActivity : DaggerAppCompatActivity() {
@@ -39,6 +41,8 @@ class OtherActivity : DaggerAppCompatActivity() {
         textView.text = cmkCoreSettings.getOptionalClientId()
         bindViews()
         bindListeners()
+       // LocaleHelper.setLocale(this, "fr-fFR");
+
 
     }
 

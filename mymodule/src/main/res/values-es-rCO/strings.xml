@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MyModule</string>
+
+    <string name="insert_first_number_hint">Pon un numero aqui Parcero</string>
+    <string name="calculate">Calcular suma! Parcero</string>
+    <string name="result">Resultado Parcero </string>
+    <string name="both_numbers_must_be_positive">Both numbers must be greater than 0!!</string>
+    <string name="both_numbers_must_have_value">Insert a value for both numbers!</string>
+
+
+</resources>
